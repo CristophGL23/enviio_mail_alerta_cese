@@ -1,7 +1,21 @@
 import { sequelizeBMServEsp as sequelize } from "../database/connection.js";
+import transporter from "../mails/config.js";
 
-export const getSupplier = async () => {
-  const supplier = await sequelize.query(`EXEC [BM_SERV_ESP].[SP_MAILS_PROVEEDORES] @OPCION = 9, @EMPRESA_ID = '888'`);
-  let filterArray = supplier[0].filter(element => element.MES === "MAYO" && element.AÑO === 2023 && element.Score != "100.00 %")
+export const getSuppliers = async (EmpresaId) => {
+  let mes = Date.now()
+  let filterArray;
+  let supplier;
+  try {
+    supplier = await sequelize.query(`EXEC [BM_SERV_ESP].[SP_MAILS_PROVEEDORES] @OPCION = 9, @EMPRESA_ID = '${EmpresaId}'`);
+  } catch (error) {
+    console.log(error)
+  }
+
+  if (EmpresaId === 871) {
+    filterArray = supplier[0].filter(element => element.MES === "SEPTIEMBRE" && element.AÑO === 2023 && element.Score != "100.00 %" && element.RFC_PROVEEDOR != "CSC070517G79" && element.RFC_PROVEEDOR != "FSE920910CC6")
+  } else {
+    filterArray = supplier[0].filter(element => element.MES === "SEPTIEMBRE" && element.AÑO === 2023 && element.Score != "100.00 %")
+  }
+
   return filterArray;
 };
