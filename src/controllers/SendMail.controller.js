@@ -9,6 +9,9 @@ export const createExcel = async (EmpresaId) => {
   const extraData = await prefijoEmpresa.filter(
     (element) => element.UUID === EmpresaId
   );
+  const namePath = `${extraData[0].abbreviation} - CUMPLIMIENTO CESE.xlsx`;
+  let pathExcel = path.join(`${__dirname}/../files/${namePath}`);
+
 
   if (API_RESPONSE) {
     let wb = new xl.Workbook();
@@ -639,7 +642,7 @@ export const createExcel = async (EmpresaId) => {
           .style(style4);
       }
     }
-    wb.write(`${extraData[0].abbreviation} - CUMPLIMIENTO CESE.xlsx`);
+    wb.write(pathExcel);
     console.log("Se descargo correctamente el archivo.");
   }
 };
