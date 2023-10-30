@@ -1,4 +1,4 @@
-import { execSpData } from "./spController";
+import { execSpData } from "./spcontroller.js";
 
 export async function sendAlerts() {
   try {

@@ -1,4 +1,3 @@
-import app from "./app.js";
 import schedule from "node-schedule";
 import config from './config.js';
 import { createExcel, sendMailTest } from "./controllers/SendMail.controller.js";
