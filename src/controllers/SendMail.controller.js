@@ -3,6 +3,7 @@ import xl from "excel4node";
 import { getSuppliers } from "./Operador.controller";
 import Empresa from "../database/models/Empresa.model";
 import { prefijoEmpresa } from "../arreglos/prefixempresas.js";
+import path from "path";
 
 export const createExcel = async (EmpresaId) => {
   let API_RESPONSE = await getSuppliers(EmpresaId);

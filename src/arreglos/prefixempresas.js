@@ -35,11 +35,11 @@ export const prefijoEmpresa = [
     //     prefix: "FD",
     //     abbreviation: "FEMSA DIGITAL"
     // },
-    // {
-    //     UUID: 907,
-    //     prefix: "I78",
-    //     abbreviation: "INMOBILIARIA 78"
-    // },
+    {
+        UUID: 907,
+        prefix: "I78",
+        abbreviation: "INMOBILIARIA 78"
+    },
     // {
     //     UUID: 909,
     //     prefix: "EX",
@@ -51,11 +51,11 @@ export const prefijoEmpresa = [
     //     abbreviation: "IMMEX"
     // },
     
-    {
-        UUID: 905,
-        prefix: "ABC",
-        abbreviation: "ABC TECH"
-    },
+    // {
+    //     UUID: 905,
+    //     prefix: "ABC",
+    //     abbreviation: "ABC TECH"
+    // },
     // {
     //     UUID: 898,
     //     prefix: "DVCM",

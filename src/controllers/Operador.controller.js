@@ -1,5 +1,4 @@
 import { sequelizeBMServEsp as sequelize } from "../database/connection.js";
-import transporter from "../mails/config.js";
 
 export const getSuppliers = async (EmpresaId) => {
   let mes = Date.now()
@@ -12,9 +11,9 @@ export const getSuppliers = async (EmpresaId) => {
   }
 
   if (EmpresaId === 871) {
-    filterArray = supplier[0].filter(element => element.MES === "SEPTIEMBRE" && element.AÑO === 2023 && element.Score != "100.00 %" && element.RFC_PROVEEDOR != "CSC070517G79" && element.RFC_PROVEEDOR != "FSE920910CC6")
+    filterArray = supplier[0].filter(element => element.MES === "OCTUBRE" && element.AÑO === 2023 && element.Score != "100.00 %" && element.RFC_PROVEEDOR != "CSC070517G79" && element.RFC_PROVEEDOR != "FSE920910CC6")
   } else {
-    filterArray = supplier[0].filter(element => element.MES === "SEPTIEMBRE" && element.AÑO === 2023 && element.Score != "100.00 %")
+    filterArray = supplier[0].filter(element => element.MES === "OCTUBRE" && element.AÑO === 2023 && element.Score != "100.00 %")
   }
 
   return filterArray;
