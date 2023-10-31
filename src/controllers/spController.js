@@ -25,6 +25,6 @@ export async function execSpData(EmpresaId) {
         element.Score != "100.00 %"
     );
   } catch (error) {
-    console.log(error);
+    notificationMailError(`Error al ejecutar SP de la empresa con el Id: ${EmpresaId} error:${error}`);
   }
 }
