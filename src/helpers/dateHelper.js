@@ -14,7 +14,7 @@ const letter_month = [
 ];
 
 export function getMonthLetter() {
-  let date = new Date();
+  const DATE = new Date();
 
-  return letter_month[date.getMonth()]
+  return letter_month[DATE.getMonth() - 1]
 }

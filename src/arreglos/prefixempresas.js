@@ -25,21 +25,21 @@ export const prefijoEmpresa = [
     //     prefix: "FS",
     //     abbreviation: "FEMSA SERVICIOS"
     // },
-    // {
-    //     UUID: 888,
-    //     prefix: "CSCP",
-    //     abbreviation: "CSCP"
-    // },
+    {
+        UUID: 888,
+        prefix: "CSCP",
+        abbreviation: "CSCP"
+    },
     // {
     //     UUID: 901,
     //     prefix: "FD",
     //     abbreviation: "FEMSA DIGITAL"
     // },
-    {
-        UUID: 907,
-        prefix: "I78",
-        abbreviation: "INMOBILIARIA 78"
-    },
+    // {
+    //     UUID: 907,
+    //     prefix: "I78",
+    //     abbreviation: "INMOBILIARIA 78"
+    // },
     // {
     //     UUID: 909,
     //     prefix: "EX",

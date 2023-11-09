@@ -12,26 +12,6 @@ const sequelize = new Sequelize(
     dialect: "mssql",
     timezone: "America/Mexico_City",
     define: {
-      schema: "dbo", // Esquema de la base de datos.
-      freezeTableName: true, // Tablas en singular
-    },
-    dialectOptions: {
-      options: { requestTimeout: 1200000 },
-    },
-    logging: false,
-  }
-);
-
-const sequelizeBMServEsp = new Sequelize(
-  config.DB_NAME_SCHEMA,
-  config.DB_NAME_USER,
-  config.DB_PASSWORD,
-  {
-    host: config.DB_SERVER,
-    port: config.DB_PORT,
-    dialect: "mssql",
-    timezone: "America/Mexico_City",
-    define: {
       schema: "BM_SERV_ESP", // Esquema de la base de datos.
       freezeTableName: true, // Tablas en singular
     },
@@ -42,28 +22,7 @@ const sequelizeBMServEsp = new Sequelize(
   }
 );
 
-const sequelizeGeneral = new Sequelize(
-  config.DB_NAME_SCHEMA,
-  config.DB_NAME_USER,
-  config.DB_PASSWORD,
-  {
-    host: config.DB_SERVER,
-    port: config.DB_PORT,
-    dialect: "mssql",
-    timezone: "America/Mexico_City",
-    define: {
-      schema: "GENERAL", // Esquema de la base de datos.
-      freezeTableName: true, // Tablas en singular
-    },
-    dialectOptions: {
-      options: { requestTimeout: 1200000 },
-    },
-    logging: false,
-  }
-);
 
-module.exports = {
-  sequelize,
-  sequelizeBMServEsp,
-  sequelizeGeneral,
-};
+export default sequelize
+
+

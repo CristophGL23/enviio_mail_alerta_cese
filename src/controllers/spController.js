@@ -1,9 +1,12 @@
-import { sequelizeBMServEsp as sequelize } from "../database/connection.js";
+import loggerconfig from "../configs/loggerconfig.js";
+import sequelize from "../database/connection.js";
 import { getMonthLetter } from "../helpers/dateHelper.js";
+import { notificationMailError } from "./notificationcontroller.js";
 
 export async function execSpData(EmpresaId) {
   const month = getMonthLetter();
   try {
+    loggerconfig.info(`Se comenzo a ejecutar el SP de la Empresa con el Id: ${EmpresaId}`)
     let supplier = await sequelize.query(
       `EXEC [BM_SERV_ESP].[SP_MAILS_PROVEEDORES] @OPCION = 9, @EMPRESA_ID = '${EmpresaId}'`
     );
@@ -17,7 +20,7 @@ export async function execSpData(EmpresaId) {
           element.RFC_PROVEEDOR != "FSE920910CC6"
       );
     }
-
+    
     return supplier[0].filter(
       (element) =>
         element.MES === month &&
