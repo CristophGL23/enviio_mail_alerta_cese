@@ -31,3 +31,5 @@ export async function execSpData(EmpresaId) {
     notificationMailError(`Error al ejecutar SP de la empresa con el Id: ${EmpresaId} error:${error}`);
   }
 }
+
+

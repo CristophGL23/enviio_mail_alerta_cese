@@ -1,6 +1,7 @@
 import { prefijoEmpresa } from "../arreglos/prefixempresas.js";
 import loggerconfig from "../configs/loggerconfig.js";
 import { createExcel } from "./excelcontroller.js";
+import { sendMailAlert } from "./mailcontroller.js";
 import { notificationMailError } from "./notificationcontroller.js";
 import { execSpData } from "./spcontroller.js";
 
@@ -10,6 +11,7 @@ export async function sendAlerts() {
     for (const empresa of prefijoEmpresa) {
       const DATA = await execSpData(empresa.UUID);
       const EXCEL = await createExcel(DATA, empresa);
+      const SEND_MAIL = await sendMailAlert(DATA, empresa);
     }
 
     loggerconfig.info('******************** Se termino de ejecutar la automatización de envió de alertas ************************')
