@@ -126,3 +126,24 @@ export const HEADERS = [
   "[Listado de Trabajadores]",
   "[Declaracion de IVA]",
 ];
+
+
+export const HEADERS_LAUREATE = [
+  "RFC_EMPRESA",
+  "EMPRESA_CONTRATANTE",
+  "RFC_PROVEEDOR",
+  "RAZON_SOCIAL",
+  "EMAIL",
+  "AÑO",
+  "MES",
+  "MES_CUMPLIMIENTO",
+  "Score",
+  "Registro STPS",
+  "Estatus de Registro",
+  "Acuse ISR (Retenciones por Salarios)",
+  "Pago ISR (Retenciones por Salarios)",
+  "Acuse IVA",
+  "Pago IVA",
+  "Declaracion de IVA",
+  "Opinion cumplimiento IMSS / INFONAVIT"
+];

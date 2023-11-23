@@ -4,12 +4,20 @@ import { getMonthLetter } from "../helpers/dateHelper.js";
 import { notificationMailError } from "./notificationcontroller.js";
 
 export async function execSpData(EmpresaId) {
-  const month = getMonthLetter();
+  let supplier = [];
+  const month = getMonthLetter(EmpresaId);
   try {
     loggerconfig.info(`Se comenzo a ejecutar el SP de la Empresa con el Id: ${EmpresaId}`)
-    let supplier = await sequelize.query(
-      `EXEC [BM_SERV_ESP].[SP_MAILS_PROVEEDORES] @OPCION = 9, @EMPRESA_ID = '${EmpresaId}'`
-    );
+    if (EmpresaId === 935 || EmpresaId === 950) {
+      supplier = await sequelize.query(
+        `EXEC [BM_SERV_ESP].[SP_MAILS_PROVEEDORES] @OPCION = 10, @EMPRESA_ID = '${EmpresaId}'`
+      );
+    } else {
+      supplier = await sequelize.query(
+        `EXEC [BM_SERV_ESP].[SP_MAILS_PROVEEDORES] @OPCION = 9, @EMPRESA_ID = '${EmpresaId}'`
+      );
+    }
+    
     if (EmpresaId === 871) {
       return supplier[0].filter(
         (element) =>
